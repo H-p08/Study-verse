@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyVerse - Novels, Notes & Comics</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #6200ea;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #3700b3;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 20px;
+    }
+    h2 {
+      border-bottom: 2px solid #6200ea;
+      padding-bottom: 5px;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    footer {
+      background: #6200ea;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 StudyVerse</h1>
+    <p>फ्री PDFs - Novels | Notes | Comics</p>
+  </header>
+
+  <nav>
+    <a href="#novels">Novels</a>
+    <a href="#notes">Notes</a>
+    <a href="#comics">Comics</a>
+  </nav>
+
+  <section id="novels">
+    <h2>📖 Novels</h2>
+    <div class="card">
+      <h3>Gulliver's Travels</h3>
+      <a href="https://example.com/gullivers-travels.pdf" target="_blank">डाउनलोड करें</a>
+    </div>
+    <div class="card">
+      <h3>The Jungle Book</h3>
+      <a href="https://example.com/jungle-book.pdf" target="_blank">डाउनलोड करें</a>
+    </div>
+  </section>
+
+  <section id="notes">
+    <h2>📝 Notes</h2>
+    <div class="card">
+      <h3>Class 11 Physics Notes</h3>
+      <a href="https://example.com/physics-notes.pdf" target="_blank">डाउनलोड करें</a>
+    </div>
+    <div class="card">
+      <h3>JEE Chemistry Notes</h3>
+      <a href="https://example.com/chem-notes.pdf" target="_blank">डाउनलोड करें</a>
+    </div>
+  </section>
+
+  <section id="comics">
+    <h2>🎨 Comics</h2>
+    <div class="card">
+      <h3>Akbar Birbal</h3>
+      <a href="https://example.com/akbar-birbal.pdf" target="_blank">डाउनलोड करें</a>
+    </div>
+    <div class="card">
+      <h3>Chacha Chaudhary</h3>
+      <a href="https://example.com/chacha.pdf" target="_blank">डाउनलोड करें</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 StudyVerse | Powered by Harsh Kumar
+  </footer>
+
+</body>
+</html>
