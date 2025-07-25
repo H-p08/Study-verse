@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📚 StudyVerse - AutoList PDFs</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 30px 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .section {
+      padding: 30px;
+    }
+    h2 {
+      color: #0077b6;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      margin: auto;
+    }
+    li {
+      background: white;
+      margin: 8px 0;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    a {
+      text-decoration: none;
+      color: #0077b6;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 StudyVerse</h1>
+    <p>All PDFs auto-listed from folders</p>
+  </header>
+
+  <div class="section" id="novels">
+    <h2>📖 Novels</h2>
+    <ul id="novelList">Loading...</ul>
+  </div>
+
+  <div class="section" id="notes">
+    <h2>📝 Notes</h2>
+    <ul id="notesList">Loading...</ul>
+  </div>
+
+  <div class="section" id="comics">
+    <h2>🎨 Comics</h2>
+    <ul id="comicsList">Loading...</ul>
+  </div>
+
+  <script>
+    async function listPDFs(folder, elementId) {
+      try {
+        const response = await fetch(folder);
+        const text = await response.text();
+        const pdfs = [...text.matchAll(/href="([^"]+\.pdf)"/g)].map(m => m[1]);
+
+        const ul = document.getElementById(elementId);
+        ul.innerHTML = '';
+
+        pdfs.forEach(pdf => {
+          const name = decodeURIComponent(pdf.split('/').pop());
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${folder}${pdf}" target="_blank">${name}</a>`;
+          ul.appendChild(li);
+        });
+
+        if (pdfs.length === 0) {
+          ul.innerHTML = '<li>No PDFs found</li>';
+        }
+
+      } catch (e) {
+        document.getElementById(elementId).innerHTML = '<li>Error loading list</li>';
+      }
+    }
+
+    listPDFs('Novels/', 'novelList');
+    listPDFs('Notes/', 'notesList');
+    listPDFs('Comics/', 'comicsList');
+  </script>
+
+</body>
+</html>
